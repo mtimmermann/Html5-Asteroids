@@ -1,0 +1,191 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Asteroids clone - Html5 canvas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Asteroids</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Static Website Boilerplate">
+  <link rel="icon" sizes="192x192" href="./img/ico/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Static Website Boilerplate">
+  <link rel="apple-touch-icon" href="./img/ico/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="./img/ico/mstile-150x150.png">
+  <meta name="msapplication-TileColor" content="#263238">
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#263238">
+
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="./assets/jquery/jquery.slim.min.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Lib files -->
+  <script src="js/lib/class.js"></script>
+  <script src="js/lib/utils.js"></script>
+
+  <!-- Before states / models -->
+  <script src="js/models/points.js"></script>
+  <script src="js/models/polygon.js"></script>
+  <script src="js/models/ship.js"></script>
+  <script src="js/models/asteroid.js"></script>
+  <script src="js/models/bullet.js"></script>
+  <script src="js/models/fragLine.js"></script>
+  <script src="js/models/fragPoint.js"></script>
+  <script src="js/models/ufo.js"></script>
+
+  <!-- States -->
+  <script src="js/states/state.js"></script>
+  <script src="js/states/gameState.js"></script>
+  <script src="js/states/menuState.js"></script>
+  <script src="js/states/endState.js"></script>
+
+  <!-- Managers and listeners -->
+  <script src="js/managers/canvas.js"></script>
+  <script src="js/managers/inputHandler.js"></script>
+  <script src="js/managers/inputSettingsHandler.js"></script>
+
+  <!-- Main, Settings and constants -->
+  <script src="js/settings.js"></script>
+  <script src="js/main.js"></script>
+
+</head>
+<body>
+  <div class="container-fluid text-center">
+    <div class="row">
+
+      <div class="col-lg-6 col-lg-push-3" style="min-height:480px;">
+        <div style="position:relative;">
+          <input type="text" id="name-input" maxlength="3" style="width:0px;">
+          <!-- Hide the text input -->
+          <div style="background-color:#fff;position:absolute;top:0;width:30%;height:100%;margin-left:30%"></div>
+        </div>
+        <canvas id="canvas-main"></canvas>
+      </div>
+
+      <div id="settings-main" class="col-lg-3 col-lg-pull-6">
+        <div class="well well-lg clearfix">
+          <div class="row">
+            <div class="col-lg-12 text-left">
+              <h4>Game Options</h4>
+              <div class="checkbox">
+                <label>
+                  <input id="sound-input" type="checkbox"> Sound
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input id="color-input" type="checkbox"> Show Colors
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input id="color-fill-input" type="checkbox"> Show Colors with Fill
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input id="inverse-input" type="checkbox"> Inverse Display
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input id="framerate-input" type="checkbox"> Show Frame Rate
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 text-left">
+              <h4>Controls</h4>
+              <div style="padding-left:15px;">
+                <ul>
+                  <li><strong>Space</strong> to fire</li>
+                  <li>← →<strong>Left</strong> and <strong>Right</strong> arrow keys to turn</li>
+                  <li>↑ <strong>Up</strong> arrow key for thruster</li>
+                  <li><strong>P</strong> Pause the game</li>
+                  <li><strong>H</strong> Hyperspace</li>
+                </ul>
+              </div>
+              <p><a href="https://github.com/mtimmermann/Html5-Asteroids">Source Code on GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 points-section">
+        <div class="well well-lg clearfix">
+          <div class="text-left">
+            <div class="row">
+              <div class="col-xs-4 text-center">
+                <img src="img/lrgrock.png">
+                <ul class="list-unstyled">
+                  <li>20 points</li>
+                </ul>
+              </div>
+              <div class="col-xs-4 text-center">
+                <img src="img/medrock.png">
+                <ul class="list-unstyled">
+                  <li>50 points</li>
+                </ul>
+              </div>
+              <div class="col-xs-4 text-center">
+                <img src="img/smlrock.png">
+                <ul class="list-unstyled">
+                  <li>100 points</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 text-center">
+                <img src="img/ufobig.gif">
+                <ul class="list-unstyled">
+                  <li>200 points</li>
+                </ul>
+              </div>
+              <div class="col-xs-4 text-center">
+                <img src="img/ufosmall.gif">
+                <ul class="list-unstyled">
+                  <li>1,000 points</li>
+                </ul>
+              </div>
+              <div class="col-xs-4 text-center bonus-ship">
+                <img src="img/ship.gif">
+                <ul class="list-unstyled">
+                  <li>Bonus Ship</li>
+                  <li>Every</li>
+                  <li>10,000 points</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    app.game = new app.Game();
+    app.game.run();
+  </script>
+</body>
+</html>

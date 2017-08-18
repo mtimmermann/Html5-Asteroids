@@ -1,0 +1,25 @@
+{
+	"version": "0.0.1",
+	"name": "Asteroids Html5",
+	"launch_path": "/index.html",
+	"description": "Asteroids clone - Html5 canvas",
+	"icons": {
+		"128": "/img/ico/icon-128x128.png"
+	},
+	"developer": {
+		"name": "",
+		"url": ""
+	},
+	"installs_allowed_from": [
+		"*"
+	],
+	"default_locale": "en",
+	"permissions": {
+	},
+	"locales": {
+		"en": {
+			"name": "Asteroids Html5",
+			"description": "Asteroids clone - Html5 canvas"
+		}
+	}
+}

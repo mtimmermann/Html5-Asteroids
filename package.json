@@ -1,0 +1,26 @@
+{
+  "name": "Html5-Asteroids",
+  "version": "0.0.1",
+  "description": "Asteroids clone - Html5 canvas",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/js",
+    "lint:table": "eslint ./src/js --cache --format table || true"
+  },
+  "keywords": [
+    "javascript",
+    "html5",
+    "canvas"
+  ],
+  "author": "Mark Timmermann",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.4",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "jshint": "^2.9.5"
+  }
+}
