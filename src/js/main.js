@@ -80,7 +80,7 @@ app.Game = Class.extend({
 
     // Color On/Off option
     this.colorOn = app.settings.getLocalInputSetting(app.settings.inputIds.color, true);
-    this.colorFillOn = app.settings.getLocalInputSetting(app.settings.inputIds.colorFill, true);
+    this.colorFillOn = app.settings.getLocalInputSetting(app.settings.inputIds.colorFill, false);
     if (this.colorFillOn) this.colorOn = true;
 
     this.sound = {
