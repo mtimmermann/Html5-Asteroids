@@ -14,3 +14,4 @@ node app.js
 ```
 
 [View Demo](https://html5-asteroids-mt.herokuapp.com/)
+![alt-text](https://raw.githubusercontent.com/mtimmermann/Html5-Asteroids/master/screenshot.png "Html5 Asteroids")
